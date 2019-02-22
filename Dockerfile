@@ -18,6 +18,7 @@ LABEL \
 ENV DRILL_VERSION            $VERSION
 ENV DRILL_HOME               /usr/local/apache-drill-${DRILL_VERSION}
 ENV DRILL_CONF_DIR           ${DRILL_HOME}/conf
+ENV DRILL_THIRD_PARTY_JARS   ${DRILL_HOME}/jars/3rdparty
 ENV DRILL_LOG_DIR            /var/log/drill
 ENV DRILL_HEAP               4G
 ENV DRILL_MAX_DIRECT_MEMORY  8G
@@ -63,6 +64,7 @@ RUN set -x \
 COPY etc/*  ${DRILL_CONF_DIR}/
 COPY bin/*  /usr/local/bin/ 
 COPY lib/*  /usr/local/lib/ 
+COPY 3rdparty-jars/* ${DRILL_THIRD_PARTY_JARS}/
  
 VOLUME ["${DRILL_LOG_DIR}"]
 
