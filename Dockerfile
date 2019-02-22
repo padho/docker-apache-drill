@@ -66,6 +66,10 @@ COPY etc/*  ${DRILL_CONF_DIR}/
 COPY bin/*  /usr/local/bin/ 
 COPY lib/*  /usr/local/lib/ 
 COPY 3rdparty-jars/* ${DRILL_THIRD_PARTY_JARS}/
+
+RUN mkdir ${DRILL_HOME}/drill-data && chmod 777 ${DRILL_HOME}/drill-data
+RUN mkdir ${DRILL_HOME}/drill-data/views && chmod 777 ${DRILL_HOME}/drill-data/views
+
  
 VOLUME ["${DRILL_LOG_DIR}"]
 

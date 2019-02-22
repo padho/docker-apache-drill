@@ -17,9 +17,9 @@ services:
     container_name: drillbit-1
     networks: ["vnet"]
     hostname: drillbit-1.vnet
-    image: smizy/apache-drill:1.15.0-alpine
+    image: padho/docker-apache-drill:latest
     ports: 
-      - 8047
+      - 8047:8047
     depends_on: ["zookeeper-1"]  
     environment:
       - SERVICE_8047_NAME=drillbit
