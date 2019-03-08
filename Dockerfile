@@ -69,7 +69,7 @@ COPY 3rdparty-jars/* ${DRILL_THIRD_PARTY_JARS}/
 
 RUN mkdir ${DRILL_HOME}/drill-data && chmod 777 ${DRILL_HOME}/drill-data
 RUN mkdir ${DRILL_HOME}/drill-data/views && chmod 777 ${DRILL_HOME}/drill-data/views
-
+RUN mkdir ${DRILL_HOME}/drill-data/views && chmod 777 ${DRILL_HOME}/drill-data/cloud
  
 VOLUME ["${DRILL_LOG_DIR}"]
 
