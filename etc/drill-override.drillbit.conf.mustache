@@ -27,6 +27,10 @@
 
 drill.exec: {
   cluster-id: "{{DRILL_CLUSTER_ID}}",
-  zk.connect: "{{DRILL_ZOOKEEPER_QUORUM}}"
+  zk.connect: "{{DRILL_ZOOKEEPER_QUORUM}}",
+     enabled: true,
+     packages += "org.midas.drill.authentication",
+     impl: "myCustomAuthenticatorType"
+  }
 }
 
