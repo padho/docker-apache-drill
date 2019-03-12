@@ -19,13 +19,14 @@
 
 # See 'drill-override-example.conf' for example configurations
 
+#  security.user.auth {
+#     enabled: true,
+#     packages += "org.midas.drill.authentication",
+#     impl: "myCustomAuthenticatorType"
+#  }
+
 drill.exec: {
   cluster-id: "{{DRILL_CLUSTER_ID}}",
-  zk.connect: "{{DRILL_ZOOKEEPER_QUORUM}}",
-  security.user.auth {
-     enabled: true,
-     packages += "org.midas.drill.authentication",
-     impl: "myCustomAuthenticatorType"
-  }
+  zk.connect: "{{DRILL_ZOOKEEPER_QUORUM}}"
 }
 
