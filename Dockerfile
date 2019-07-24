@@ -34,6 +34,7 @@ ENV PATH        $PATH:${JAVA_HOME}/bin:${DRILL_HOME}/bin
 
 RUN set -x \
     && apk --no-cache add \
+        nss \
         bash \
         java-snappy-native \
         libc6-compat \
